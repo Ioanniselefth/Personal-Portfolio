@@ -1,5 +1,5 @@
 //771. Jewels and Stones
-class Solution {
+class Solution771 {
     public int numJewelsInStones(String jewels, String stones) {
         int num = 0;
         for (int i = 0; i < stones.length(); i++) {

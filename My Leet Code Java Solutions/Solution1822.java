@@ -1,8 +1,5 @@
 //1822. Sign of the Product of an Array
-
-import java.util.Arrays;
-
-class Solution {
+class Solution1822 {
     public int arraySign(int[] nums) {
         int temp = 1;
         for (int i = 0; i < nums.length; i++) {

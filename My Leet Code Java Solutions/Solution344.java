@@ -1,6 +1,6 @@
 //344. Reverse String
 
-class Solution {
+class Solution344 {
     public void reverseString(char[] s) {
 
         int j = 0;

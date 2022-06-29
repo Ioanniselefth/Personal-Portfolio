@@ -1,6 +1,6 @@
 //724. Find Pivot Index
 //Time Complexity = C1(n) + C2(n) = C1+C2(n*n) = O(n^2) 
-class Solution {
+class Solution724{
     public int pivotIndex(int[] nums) {
         int sum = 0;
         int leftsum = 0;

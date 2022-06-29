@@ -1,5 +1,5 @@
 //557. Reverse Words in a String III
-class Solution {
+class Solution557 {
     public String reverseWords(String s) {
         String words[] = s.split(" ");
         StringBuilder res = new StringBuilder();

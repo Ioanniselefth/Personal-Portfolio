@@ -10,9 +10,8 @@
  */
 //21. Merge Two Sorted Lists
 
-import java.util.Arrays;
 
-class Solution {
+class Solution21 {
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         if (l1 == null) {
             return l2;

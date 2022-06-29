@@ -1,5 +1,5 @@
 //1480. Running Sum of 1d Array
-class Solution {
+class Solution1480 {
     public int[] runningSum(int[] nums) {
         int sum = 0;
         int temp[] = new int[nums.length];

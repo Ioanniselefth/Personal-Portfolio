@@ -1,5 +1,5 @@
 //202. Happy Number
-class Solution {
+class Solution202 {
     public boolean isHappy(int n) {
         if (n <= 0) {
             return false;

@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-class Solution {
+class Solution976 {
     public int largestPerimeter(int[] nums) {
         Arrays.sort(nums);
         for (int i = nums.length - 3; i >= 0; i--) {

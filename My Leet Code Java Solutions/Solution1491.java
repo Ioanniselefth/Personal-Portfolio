@@ -1,6 +1,6 @@
 //1491. Average Salary Excluding the Minimum and Maximum Salary
 
-class Solution {
+class Solution1491 {
     public double average(int[] salary) {
         int min = salary[0];
         int max = salary[0];

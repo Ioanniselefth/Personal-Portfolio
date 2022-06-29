@@ -1,6 +1,6 @@
 //58. Length of Last Word
 //Time Complexity = O(n)
-class Solution {
+class Solution58 {
     public int lengthOfLastWord(String s) {
         int counter =0;
         String[] array = s.split(" ");

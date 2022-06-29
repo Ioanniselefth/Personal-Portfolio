@@ -1,6 +1,6 @@
 //283. Move Zeroes
 
-class Solution {
+class Solution283 {
     public void moveZeroes(int[] nums) {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {

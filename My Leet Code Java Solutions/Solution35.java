@@ -5,7 +5,7 @@
         -return the index where it would be if it were inserted in order
     -O(log n) complexity
 */
-class Solution {
+class Solution35 {
     public int searchInsert(int[] nums, int target) {
         for(int i=0; i<nums.length; i++){
             if(target == nums[i]){

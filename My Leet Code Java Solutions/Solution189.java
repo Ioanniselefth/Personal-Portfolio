@@ -1,5 +1,5 @@
 //189. Rotate Array
-class Solution {
+class Solution189 {
     public static void reverse(int nums[], int i, int j) {
         int li = i;
         int ri = j;
