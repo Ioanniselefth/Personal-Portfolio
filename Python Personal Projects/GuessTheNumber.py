@@ -7,9 +7,9 @@ def guess(x):
     while(Guess != RandomNumber):
         Guess = int(input('Guess a number between 1 and '+str(x)+':'))
         if Guess < RandomNumber:
-            print('Sorry my man/woman you suck. Too small(I guess you are used to this expression) .')
+            print('Sorry my man/woman you suck. Too small .')
         elif Guess > RandomNumber:
-            print('Sorry my man/woman you suck. Too big(I guess you not are used to this expression) .')
+            print('Sorry my man/woman you suck. Too big .')
         print('Did not think you would find it. I guess you won?')
 
 

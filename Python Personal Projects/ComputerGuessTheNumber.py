@@ -12,10 +12,10 @@ def computerguess(x):
         Guess = random.randint(Low,High)
         Feedback = input('Is '+str(Guess)+' too high(H), too low(L) or correct(C) ')
         if Feedback=='H':
-            print('Sorry my man/woman you suck. Too big(I guess you are used to this expression) .')
+            print('Sorry my man/woman you suck. Too big .')
             High = Guess-1
         elif Feedback=="L":
-            print('Sorry my man/woman you suck. Too small(I guess you not are used to this expression) .')
+            print('Sorry my man/woman you suck. Too small .')
             Low = Guess + 1
         print('Did not think you would find it. I guess you won?')
 

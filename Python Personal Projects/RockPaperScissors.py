@@ -11,13 +11,13 @@ def play(DoYouWantToPlayAgain):
             print( 'It is a tie GOD DAMN IT')
 
         if win(user,computer)==True:
-            print('I WON MOTHER F*ER F* YEAH YOU STUPID B')
+            print('I WON')
         else:
             print('FML I LOST TO A COMPUTER')
         
         temp = input('Do you want to play again(Y-Yes,N-No): ')
         if(temp == "N"):
-            print('See you SUCKER')
+            print('See you')
             DoYouWantToPlayAgain = False
 
 def win(player,computer):

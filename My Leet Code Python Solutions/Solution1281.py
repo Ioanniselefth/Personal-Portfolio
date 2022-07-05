@@ -1,5 +1,8 @@
 #1281. Subtract the Product and Sum of Digits of an Integer
 
+from asyncio.subprocess import SubprocessStreamProtocol
+
+
 class Solution:
     def subtractProductAndSum(self, n: int) -> int:
         prod = 1
@@ -9,3 +12,5 @@ class Solution:
             sum1 += (n % 10)
             n //= 10
         return prod-sum1
+
+subtractProductAndSum(10)
