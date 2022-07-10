@@ -1,0 +1,216 @@
+Fundamentals of HTML:
+    -HTML is used for web development
+    -HTML builds the structure of the website
+    -You can create the tables and other UI features of your website with HTML
+    -HTML provides structure to the content appearing on a website, such as images, text, or videos
+    -HTML stands for HyperText Markup Language
+Fundamentals of CSS:
+    -CSS stands for Cascading Style Sheet?
+    -
+Fundamentals of Web Dev:
+    -We put class so we can style something in html and we put id so we can pick that in js if we need
+
+About Interorient:
+    -About Interorient:
+        Interorient was found in 1979, prides itself about being the leaders in 
+        quality ship management with a long and succesfull history
+    -What is ShipManagement:
+        Ship management, as the name suggests, deals with the process of managing a ship.
+        Ship management is done by independent companies which use ships of some other 
+        companies or independent owners. The ship management company manages ships for 
+        the owner and pays him the yearly amount which is settled between the owner and 
+        the ship management company.
+    -Edres:
+        Tried to find information about their bases. Could only find the 
+        headquarters in limassol.
+Personal Questions:
+    -Tell me about yourself:
+        I am an aspiring software developer. I fell in love with computers when i was 12
+        Worked in IT since high school. Then went on to study computer engineering for this
+        reason. But I fell in love more with programming during my studies. I am really
+        excited to kickstart my career in software development, currently I am an intern at
+        a startup company which actually helped me a lot despite the lack of time that i have been
+        there because I am the only intern there and the lead developer puts all the effort in helping me
+        develop. I love creating and designing different programs and algorithms, learning new
+        things and redefing my skills.  
+    -How would people describe you?:
+        I would say that people describe me as a good communicator because I always listen
+        closetly to the task ahead and try to understand it as clearly as possible.
+    -Why you wish to join Interorient and what is your aim?:
+        It's a great opportunity to kickstart my carrer in software development, per my knowledge
+        you have a great working environment and I am willing to learn and overcome every task and obstacle
+        that you put in front of me
+    -Which is your most significant accomplishment?:
+        Outside my internship I did not had any significant proffesional acccomplishments.But
+        On a personal level I have to say that my time in special forces was a nice experience
+        in my life. Looking back watching how I grew as a person and as a human.
+    -What is your greatest strength?:
+        I'm highly motivated and extremely passionate about developing. Coding was just a hobby
+        for me about 2 years ago, so I will work very hard to be able to do what I like on a daily 
+        basis and also make a living out of it.
+    -What is your greatest weakness?:
+        I would say that my biggest weakness it that I am an undergraduate and I don't have much 
+        professional experience but I will not let this minor setback stop me. I have a good work ethic
+        and I am a fast learner.
+    -Tell me about a time when you had to work through some negativity to get some work done?:
+        Well my grandmother had past away this february she had alzhaimers for years. I was at Ioannina 
+        at a time and my semester exams where like 2 days away if i remember correctly. It was a tought time
+        but I couldn't just close the books and say i cant study right now or something like this.
+    -Tell me about teamwork?:
+        Teamwork is a necessary component to success for every company, there are many people
+        working at every company with different backgrounds/personality/believes and everyone
+        has to learn to get alone with each other and help each other achieve the many tasks
+        your supervisor/or your boss puts in your way.
+    -Which sentence has the word because three time consecutively?:
+        I don't like because, because, because it's part of an excuse
+    -What our company will gain from hiring you?:
+        By hiring me you would hire a junior software developer, who is very inspired and dedicated to
+        to grow. 
+    -How did you hear about this position? :
+        I found the job listing in linkedin
+    -Work environment prefer?:
+    -How do you deal with pressure or stresfull situations?:
+        Staying positive.,Ask for help,Accept that I cant solve everything.,
+        Working out, Manage my time better, Make time for my personal life
+    -Working on a team or solo?:
+        I think they are both essentials, If i watch someone do something all the time then I might assume that I know
+        it but you have to try it on your own to make sure, Working on your own will help you get a more hands-on experience. Although
+        on the other side working as a team can increase productivity, help make better decisions and be more efficient.
+    -How do you keep yourself organized?:
+        Set Goals, Make lists, Manage time well, Reduce clutter.
+Computer Science Questions:
+    -What is your preferred programming language?:
+        My prefereed programming language is Python, because it's very easy for a beginner to
+        to pick up but also it's a very powerfull language and one of the most popular ones
+        I also like Java because it was the first programming language i went quite in-depth
+        and made me fall in love with coding.
+    -What is a class? Super-Class? Abstract Class:
+        Class is the blueprint for creating objects. Class contains the methods and variables which are a class instance.
+        Super-Class is the basis of the class under consideration.
+        A class having the keyword abstract is called an abstract class
+    -Constructor? Default Constructor? Parametereized Constructor?:
+        A Constructor is the way to initiate a class/ create a class Object.It's the first thing that is being called when you initiate the class
+        Default Construcotr either has no arguments or all the arguments have default values
+        Parameterized Constructor takes some arguments to pass them
+    -OOP Principles?:
+        1) Encapsulati  on 2) Abstraction 3) Inheritance 4) Polymorphism
+    -Multiple Inheritance? Advantages/Disadvantages?:
+        Multiple Inheritance is the process where a subclass can derived from more than one super class
+        Advantage: Class can inherit the functionality of more than one base class
+        Disadvantage: It can lead to a lot of confusion when two base classes implement a method with the same name
+    -SDLC:
+        Software Development Life Cycle: 1)Planning 2)Design 3)Construction 4)Testing 5) Deployment
+    -Inheritance:
+        Inheritance is simillar to a class, but it is a collection of abstract methods. A class
+        can have more than one interface.
+        Inheritance is an oop concept in which one class derives the properties of the rest
+        of the classes
+    -Interface:
+        Is a collection of abstract methods which lay out the required behavior of any class that implements it 
+    -Algorithm?:
+        Is a rule or step-by-step process that must be followed in order to solve a problem
+    -Access Modifiers:
+        Private : visible to a particular class
+        Public : visible to everyone
+        Protected : Visible to a specific pakcage as well as a subclass
+    -Git and Github:
+        -Git init: creates a new git repository- probably will never use it 
+        -Git status: inpsects the contents in the working directory
+        -Git add: adds files from the working directory to the staging area
+        -Git diff: shows the difference between the working directory
+        -Git commit: peramenently stores files changes from the staging area to the area in the repository
+        -Git log: shows a list of all previous commits
+        -Why use git: Keep track of changes made to a project
+    -Linux:
+        -Linux: Open source software-Programmers can design their own, Free Licences for server and user,
+        Low issues with virus or malware
+        -Permission: chmod - +add, -deny 
+        -Pwd: print working directory - current working location
+        -Cd: change directory
+        -mkdir: Create a new directory
+        -rmdir: remove a directory
+        -CTRL+Alt+DEL : restart the system without confirmation 
+    -A REST API: (also known as RESTful API) 
+        Is an application programming interface (API or web API) that conforms to the constraints of REST architectural 
+        style and allows for interaction with RESTful web services. 
+        REST stands for representational state transfer and was created by computer scientist Roy Fielding.
+    -Class level scope: 
+        If its a private variable it can be accessed only inside the class. 
+        If it's public it can be accessed outside the class.
+    -Method Level Scope: 
+        When a variable is declared inside the method then it is not accesible outside that method
+    -Block scope:
+        Any variable declared in a for loop condition is not accesible
+        after the loop is finished you cannot access it unless it was initialized beforehand
+    -Static:
+        Is a keyword that can be added after the access modifier of a method or a variable.
+        It indicates that the declared entity is the same across all instances of that class 
+        and that it can be accessed even before an object of that class is created
+    -Method overriding:
+        It is a feature that allows a subclass to have a method with the same name
+        and parameters as one declared in its parent class.
+    -Method overloading:
+        With overloading a class can have multiple methods with the same name if they have 
+        different parameter lists
+    -Constructor overloading:
+        This gives the option to initiate an object with different sets of arguments.
+    -(==) vs equals:
+        When we use == operator it checks if they have the same addresses in the string constant pool
+        but if we use equals the result is the comparison of the 2 values
+    -Casting:  
+        Type Casting is the process of converting a value of one primitive data type to another 
+        primitive data type. Data types are classified as "lower" if they hold less data
+        and "higher" if they hold more data
+    -Dictionary:
+        Is an abstract class that stores key-value pairs. Given a key you can retrieve the value
+        that is associated with that key.Hashtable is a data structure that stores key-value pairs in a hashtable, very similar to HashMap
+    -Framework:
+        Is often a layered structure indicating what kind of 
+        programs can or should be built and how they would interrelate
+    -API:  
+        Application Program Interface, it allows applications to interact with 
+        another piece of software.
+    -Scope Pollution:
+        When you declare global variables they go the global namespace. The global
+        namespace allows the vartiables to be accessible from anywhere in the program.
+        These variables remain there until the program finishes which means our global
+        namespace can fill up really quickly. Scope pollution is when we have too many
+        global variables remain there until the program finishes which means our global namespace
+        can fill up really quickly
+    
+IQ Test:
+    -First: A bussinessman purchased 30 TV sets in Rs 300000 if the average cost of 15 TV
+    sets is Rs.9000 then find out the average cost of remaining TV sets.
+        Total Cost of 30 TV Sets = Rs.300000
+        Total Cost of 15 Tv sets = 9000 x 15 = 135 000
+        Total cost of remaining 15 tv sets = 300 000 - 135 000 = 165 000
+        Average cost of remaining Tv sets = 165 000/ 15 = Rs.11 000
+    -Second: Find the average of first 5 consecutive even numbers starting from 2 to 10
+    where the last even number is 10.
+    
+    -Third: A cube of 3x3x3 is painted from all the 6 faces. If i cut the cube in 27
+    equal cubes of 1x1x1 then hwo many cubes will be painted on exactly? 12
+
+    -Fourth: The average of 8 numbers is 14, The average of 6 numbers is 16.what 
+    is the average of the remaining two numbers? A)12 B)6 C)8 D)10 
+        Average of 8 numbers = 14 => Sum of 8 numbers = 14x8 = 112
+        Average of 6 numbers = 16 => Sum of 6 numbers = 16x6 = 96
+        Therefore the sum of 2 = Sum of 8 - Sum of 6 = 112-96 = 16
+        Average = Sum of 2/ 2 = 16/2 = 8
+    -Fifth: What months have 28 days?
+        Every month has 28 days, but if you specify only 28 days then 
+        February except 1 in 4 years
+    -Six: You enter a dark room and only have one match. What do you light first. An oil heater,
+    an oil lamp or a candle?
+        You light the match first. Considering it is lighted then you light the candle
+        but what if you do not have the matches case
+    -Seven: You paid 1.10 for a ball and something and the something was 1 dollar more
+    How much was the ball? 
+        0.05 something or ball and the other was 1.05
+    -Eight: Lilys in a lake need 48 days to fill. How many days does it take to fill fully if every day
+    fills halve more than yesterday? 47 days will be halve full
+    -Nine: Assuming you are driving the buss,.....: Who is driving the buss? me?
+    -Ten: What is the half of 2+2?
+       Depends of how you write it could be either 2 or 3
+        1/2 (2+2) = 2  
+        (1/2*2) + 2 = 3
