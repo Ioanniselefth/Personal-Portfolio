@@ -23,3 +23,18 @@ class Solution9 {
 }
 // 9. Palindrome Number
 // Time Complexity = C1(n) + C2(n) = (C1+C2....)(n) = O(n)
+/*
+ * class Solution {
+    public boolean isPalindrome(int x) {
+        String str = Integer.toString(x);
+        int j = str.length()-1; 
+        for(int i = 0; i<str.length()/2; i++){
+            if(str.charAt(i) != str.charAt(j)){
+                return false;
+            }
+            j -= 1;
+        }
+        return true;
+    }
+}
+ */
