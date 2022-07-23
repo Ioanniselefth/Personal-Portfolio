@@ -20,5 +20,8 @@ class Solution:
             j-=1
         return True
 
+class Solution:
+    def isPalindrome(self, x:int) -> bool:
+        return  x == str(x[::-1])
 
 """
