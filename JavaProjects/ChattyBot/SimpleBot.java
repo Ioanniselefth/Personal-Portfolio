@@ -1,3 +1,5 @@
+package JavaProjects.ChattyBot;
+
 import java.util.Scanner;
 
 class SimpleBot {

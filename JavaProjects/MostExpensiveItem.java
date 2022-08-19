@@ -1,3 +1,5 @@
+package JavaProjects;
+
 public class MostExpensiveItem {
     public static double getMostExpensiveItemCost(double[] groceryPrices) {
         double maxCost = groceryPrices[0];

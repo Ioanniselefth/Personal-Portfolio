@@ -1,3 +1,5 @@
+package JavaProjects;
+
 public class ReverseListWithoutNew {
     public static void reverseGroceries(String[] groceryList) {
         int j = groceryList.length - 1;
@@ -19,7 +21,7 @@ public class ReverseListWithoutNew {
             System.out.println(item);
         }
     }
-    
+
 }
 /*
  * For example, your original list looked like this: ["banana", "chocolate",

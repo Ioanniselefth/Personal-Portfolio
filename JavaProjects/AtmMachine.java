@@ -1,3 +1,5 @@
+package JavaProjects;
+
 import java.util.Scanner;
 
 public class AtmMachine {

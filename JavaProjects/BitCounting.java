@@ -1,3 +1,5 @@
+package JavaProjects;
+
 public class BitCounting {
   public static int countBits(int n) {
     int count = 0;

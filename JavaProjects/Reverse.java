@@ -1,3 +1,5 @@
+package JavaProjects;
+
 public class Reverse {
 
   public static String reverseString(String text) {

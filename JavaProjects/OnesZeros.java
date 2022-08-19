@@ -1,3 +1,5 @@
+package JavaProjects;
+
 import java.util.List;
 
 public class OnesZeros {

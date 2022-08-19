@@ -1,3 +1,5 @@
+package JavaProjects;
+
 public class VowelCounts {
 
   public static int getCount(String str) {

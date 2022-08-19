@@ -1,3 +1,5 @@
+package JavaProjects;
+
 class CountNumberOfQuotes {
   public static int findNumberOfQuotes(String text) {
     int numQuotes = 0;

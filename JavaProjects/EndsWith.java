@@ -1,3 +1,5 @@
+package JavaProjects;
+
 public class EndsWith {
     public static boolean hasSpecialItem(double[] groceryPrices) {
         for (int i = 0; i < groceryPrices.length; i++) {

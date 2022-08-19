@@ -1,3 +1,5 @@
+package JavaProjects;
+
 public class Rotate1ToTheRight {
     public static void rotateGroceries(String[] groceryList) {
         if (groceryList.length > 1) {

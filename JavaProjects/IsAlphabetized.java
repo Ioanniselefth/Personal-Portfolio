@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+package JavaProjects;
 
 public class IsAlphabetized {
     public static boolean isAlphabetized(String[] groceryList) {

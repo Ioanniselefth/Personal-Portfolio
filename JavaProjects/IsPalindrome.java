@@ -1,3 +1,5 @@
+package JavaProjects;
+
 public class IsPalindrome {
 
     public static Boolean isPalindrome(String temp) {
