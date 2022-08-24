@@ -1,4 +1,4 @@
-package JavaProjects;
+package JavaProjects.TicTacToeAi;
 
 import java.util.InputMismatchException;
 //@author Ioannis Eleftheriadis
