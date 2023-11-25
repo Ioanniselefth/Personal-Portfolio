@@ -1,0 +1,25 @@
+body{
+    background-color: aqua;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.action{
+    margin: 10px;
+}
+
+button{
+    cursor:pointer;
+}
+
+.circle{
+    border: 1px solid black;
+    width:200px;
+    height:200px;
+    border-radius: 50%;
+}
