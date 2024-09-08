@@ -1,7 +1,7 @@
 import requests
 import sqlite3
 from datetime import datetime, timedelta
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, g, request
 
 app = Flask(__name__)
 
@@ -14,6 +14,18 @@ locations = [
     {"name": "New York", "lat": 40.7128, "lon": -74.0060},
     {"name": "Tokyo", "lat": 35.6762, "lon": 139.6503},
 ]
+
+def get_db_connection():
+    if 'db' not in g:
+        g.db = sqlite3.connect('weather_data.db', timeout=10)
+        g.db.row_factory = sqlite3.Row
+    return g.db
+
+@app.teardown_appcontext
+def close_db_connection(exception):
+    db = g.pop('db', None)
+    if db is not None:
+        db.close()
 
 def init_db():
     conn = get_db_connection()
@@ -39,12 +51,6 @@ def init_db():
     ''')
 
     conn.commit()
-    conn.close()
-
-def get_db_connection():
-    conn = sqlite3.connect('weather_data.db')
-    conn.row_factory = sqlite3.Row 
-    return conn
 
 def store_forecast(location_id, forecast_data):
     conn = get_db_connection()
@@ -57,7 +63,6 @@ def store_forecast(location_id, forecast_data):
         ''', (location_id, date_entry['date'], date_entry['value']))
 
     conn.commit()
-    conn.close()
 
 def fetch_forecast(location):
     lat = location['lat']
@@ -74,11 +79,17 @@ def fetch_forecast(location):
         conn = get_db_connection()
         cursor = conn.cursor()
 
-        cursor.execute("INSERT INTO locations (name, latitude, longitude) VALUES (?, ?, ?)", 
-                       (location['name'], lat, lon))
-        location_id = cursor.lastrowid 
-        conn.commit()
-        
+        cursor.execute("SELECT id FROM locations WHERE name = ?", (location['name'],))
+        existing_location = cursor.fetchone()
+
+        if existing_location:
+            location_id = existing_location['id']
+        else:
+            cursor.execute("INSERT INTO locations (name, latitude, longitude) VALUES (?, ?, ?)", 
+                           (location['name'], lat, lon))
+            location_id = cursor.lastrowid 
+            conn.commit()
+
         store_forecast(location_id, response.json())
 
         return response.json()
@@ -96,10 +107,92 @@ def fetch_forecast_for_all():
     
     return jsonify(forecast_data)
 
+@app.route('/locations', methods=['GET'])
+def list_locations():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT * FROM locations")
+    locations = cursor.fetchall()
+
+    conn.close()
+
+    return jsonify([dict(location) for location in locations])
+
+@app.route('/latest-forecast', methods=['GET'])
+def latest_forecast():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        SELECT l.name, l.latitude, l.longitude, f.date, f.temp
+        FROM forecasts f
+        JOIN locations l ON f.location_id = l.id
+        WHERE f.date = (
+            SELECT MAX(date)
+            FROM forecasts f2
+            WHERE f2.location_id = f.location_id
+        )
+    ''')
+
+    latest_forecasts = cursor.fetchall()
+    conn.close()
+
+    return jsonify([dict(forecast) for forecast in latest_forecasts])
+
+@app.route('/average-temp', methods=['GET'])
+def average_temp():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute('''
+        SELECT l.name, l.latitude, l.longitude, AVG(f.temp) as avg_temp
+        FROM forecasts f
+        JOIN locations l ON f.location_id = l.id
+        WHERE f.id IN (
+            SELECT id
+            FROM forecasts f2
+            WHERE f2.location_id = f.location_id
+            ORDER BY date DESC
+            LIMIT 3
+        )
+        GROUP BY l.id
+    ''')
+
+    averages = cursor.fetchall()
+    conn.close()
+
+    return jsonify([dict(avg) for avg in averages])
+
+@app.route('/top-locations', methods=['GET'])
+def top_locations():
+    metric = request.args.get('metric', 'temp')
+    n = int(request.args.get('n', 3))
+
+    conn = get_db_connection()
+    cursor = conn.cursor()
+
+    cursor.execute(f'''
+        SELECT l.name, l.latitude, l.longitude, AVG(f.{metric}) as avg_{metric}
+        FROM forecasts f
+        JOIN locations l ON f.location_id = l.id
+        GROUP BY l.id
+        ORDER BY avg_{metric} DESC
+        LIMIT ?
+    ''', (n,))
+
+    top_locations = cursor.fetchall()
+    conn.close()
+
+    return jsonify([dict(location) for location in top_locations])
+
+
 @app.route('/')
 def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    init_db()
+    # Use app context to run the init_db function
+    with app.app_context():
+        init_db()  # Initialize the database tables
     app.run(debug=True)

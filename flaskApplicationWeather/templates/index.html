@@ -25,16 +25,30 @@
             padding: 10px;
             text-align: left;
         }
+        button {
+            margin: 10px 0;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <h1>Weather Forecast for 7 Days</h1>
+    <h1>Weather Forecast API Interaction</h1>
 
-    <button onclick="fetchForecasts()">Fetch Forecasts</button>
-    <div id="forecast-status"></div>
+    <!-- Buttons to interact with different API endpoints -->
+    <button onclick="fetchForecasts()">Fetch Forecasts for All Locations</button>
+    <button onclick="listLocations()">List All Locations</button>
+    <button onclick="fetchLatestForecast()">Get Latest Forecast for Each Location</button>
+    <button onclick="fetchAverageTemp()">Get Average Temperature for Last 3 Forecasts</button>
+    <button onclick="fetchTopLocations()">Get Top 3 Locations by Temperature</button>
 
-    <h2>Locations & Forecasts</h2>
-    <table>
+    <!-- Divs to display statuses -->
+    <div id="status"></div>
+
+    <!-- Table to display results -->
+    <h2>Results</h2>
+    <table id="results-table">
         <thead>
             <tr>
                 <th>Location</th>
@@ -42,7 +56,8 @@
                 <th>Temperature (°C)</th>
             </tr>
         </thead>
-        <tbody id="forecast-table">
+        <tbody id="results-body">
+            <!-- Dynamic results will be injected here -->
         </tbody>
     </table>
 
@@ -51,17 +66,69 @@
             fetch('/fetch-forecast')
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('forecast-status').innerText = 'Data fetched successfully!';
+                    document.getElementById('status').innerText = 'Forecasts fetched successfully!';
                     updateTable(data);
                 })
                 .catch(error => {
+                    document.getElementById('status').innerText = 'Error fetching forecasts.';
                     console.error('Error fetching forecasts:', error);
-                    document.getElementById('forecast-status').innerText = 'Error fetching forecasts.';
+                });
+        }
+
+        function listLocations() {
+            fetch('/locations')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').innerText = 'Locations fetched successfully!';
+                    updateTableWithLocations(data);
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = 'Error fetching locations.';
+                    console.error('Error fetching locations:', error);
+                });
+        }
+
+        function fetchLatestForecast() {
+            fetch('/latest-forecast')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').innerText = 'Latest forecast fetched successfully!';
+                    updateTableWithForecast(data);
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = 'Error fetching latest forecast.';
+                    console.error('Error fetching latest forecast:', error);
+                });
+        }
+
+        function fetchAverageTemp() {
+            fetch('/average-temp')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').innerText = 'Average temperature fetched successfully!';
+                    updateTableWithAverageTemp(data);
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = 'Error fetching average temperature.';
+                    console.error('Error fetching average temperature:', error);
+                });
+        }
+
+        function fetchTopLocations() {
+            fetch('/top-locations?metric=temp&n=3')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').innerText = 'Top 3 locations fetched successfully!';
+                    updateTableWithTopLocations(data);
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = 'Error fetching top locations.';
+                    console.error('Error fetching top locations:', error);
                 });
         }
 
         function updateTable(data) {
-            const tableBody = document.getElementById('forecast-table');
+            const tableBody = document.getElementById('results-body');
             tableBody.innerHTML = ''; 
 
             Object.keys(data).forEach(location => {
@@ -83,6 +150,94 @@
 
                     tableBody.appendChild(row);
                 });
+            });
+        }
+
+        function updateTableWithLocations(data) {
+            const tableBody = document.getElementById('results-body');
+            tableBody.innerHTML = ''; 
+
+            data.forEach(location => {
+                const row = document.createElement('tr');
+                const locationCell = document.createElement('td');
+                const dateCell = document.createElement('td');  
+                const tempCell = document.createElement('td');  
+
+                locationCell.textContent = location.name;
+                dateCell.textContent = '-';
+                tempCell.textContent = '-';
+
+                row.appendChild(locationCell);
+                row.appendChild(dateCell);
+                row.appendChild(tempCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function updateTableWithForecast(data) {
+            const tableBody = document.getElementById('results-body');
+            tableBody.innerHTML = ''; 
+
+            data.forEach(forecast => {
+                const row = document.createElement('tr');
+                const locationCell = document.createElement('td');
+                const dateCell = document.createElement('td');
+                const tempCell = document.createElement('td');
+
+                locationCell.textContent = forecast.name;
+                dateCell.textContent = new Date(forecast.date).toLocaleString();
+                tempCell.textContent = forecast.temp;
+
+                row.appendChild(locationCell);
+                row.appendChild(dateCell);
+                row.appendChild(tempCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function updateTableWithAverageTemp(data) {
+            const tableBody = document.getElementById('results-body');
+            tableBody.innerHTML = ''; 
+
+            data.forEach(location => {
+                const row = document.createElement('tr');
+                const locationCell = document.createElement('td');
+                const dateCell = document.createElement('td'); 
+                const tempCell = document.createElement('td');
+
+                locationCell.textContent = location.name;
+                dateCell.textContent = '-';
+                tempCell.textContent = location.avg_temp.toFixed(2);
+
+                row.appendChild(locationCell);
+                row.appendChild(dateCell);
+                row.appendChild(tempCell);
+
+                tableBody.appendChild(row);
+            });
+        }
+
+        function updateTableWithTopLocations(data) {
+            const tableBody = document.getElementById('results-body');
+            tableBody.innerHTML = ''; 
+
+            data.forEach(location => {
+                const row = document.createElement('tr');
+                const locationCell = document.createElement('td');
+                const dateCell = document.createElement('td');  
+                const tempCell = document.createElement('td');
+
+                locationCell.textContent = location.name;
+                dateCell.textContent = '-';
+                tempCell.textContent = location.avg_temp.toFixed(2);
+
+                row.appendChild(locationCell);
+                row.appendChild(dateCell);
+                row.appendChild(tempCell);
+
+                tableBody.appendChild(row);
             });
         }
     </script>

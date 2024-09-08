@@ -1,0 +1,47 @@
+# Weather Forecast Application - Short Report
+
+-- SQL schema for creating the tables
+
+CREATE TABLE IF NOT EXISTS locations (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    latitude REAL NOT NULL,
+    longitude REAL NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS forecasts (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    location_id INTEGER,
+    date TEXT NOT NULL,
+    temp REAL NOT NULL,
+    FOREIGN KEY(location_id) REFERENCES locations(id)
+);
+
+#Running the application
+
+1. Installation Instructions: Clone the repository or unzip the package.
+2. Install dependencies: pip install -r requirements.txt
+3. Set up the SQLite database (if not included): sqlite3 weather_data.db < schema.sql
+4. Start the Flask application: python app.py
+5. Open a browser and go to http://127.0.0.1:5000/ to access the UI.
+6. Use the provided buttons to interact with the APIs.
+
+## Overall Process:
+- I started by setting up a Flask application to fetch weather data from the Meteomatics API. 
+- The data for 3 locations was stored in an SQLite database, and several API endpoints were created to list locations, forecasts, and other related information.
+- A basic HTML UI was built to interact with these API endpoints.
+
+## Key Decisions:
+- I chose Flask due to its lightweight nature and ease of setting up RESTful APIs. SQLite was chosen because it is lightweight and suitable for small-scale projects.
+
+## Challenges:
+- I ran into an issue with SQLite locking when writing to the database concurrently. This was resolved by managing the database connection more carefully using Flask’s `g` object.
+- Fetching and parsing data from the API required careful management of dates and API formats.
+
+## Tools and Techniques:
+- Flask for the backend API.
+- SQLite for database management.
+- DB Browser for SQLite to manage and export the database tables.
+- Python Requests library for API requests.
+
+
