@@ -1,0 +1,82 @@
+Logs For Solution of Question A:
+C:\Users\ioanniel\Documents\Workspace\Personal> & c:/Users/ioanniel/Documents/Workspace/Personal/codeSnippetGenerator/venv/Scripts/python.exe c:/Users/ioanniel/Documents/Workspace/Personal/theoriaIpologismouProject/questiona.py
+
+Testing sequence: 010
+Initial state: q0
+Read '0': q0 -> q0
+Read '1': q0 -> q1
+Read '0': q1 -> q3
+Final state: q3, Accepted: True
+Expected: True | Result: True
+
+
+Testing sequence: 0110
+Initial state: q0
+Read '0': q0 -> q0
+Read '1': q0 -> q1
+Read '1': q1 -> q2
+Read '0': q2 -> q0
+Final state: q0, Accepted: False
+Expected: True | Result: False
+
+
+Testing sequence: 01010
+Initial state: q0
+Read '0': q0 -> q0
+Read '1': q0 -> q1
+Read '0': q1 -> q3
+Read '1': q3 -> q0
+Read '0': q0 -> q0
+Final state: q0, Accepted: False
+Expected: True | Result: False
+
+
+Testing sequence: 01110
+Initial state: q0
+Read '0': q0 -> q0
+Read '1': q0 -> q1
+Read '1': q1 -> q2
+Read '1': q2 -> q1
+Read '0': q1 -> q3
+Final state: q3, Accepted: True
+Expected: True | Result: True
+
+
+Testing sequence: 011
+Initial state: q0
+Read '0': q0 -> q0
+Read '1': q0 -> q1
+Read '1': q1 -> q2
+Final state: q2, Accepted: False
+Expected: False | Result: False
+
+
+Testing sequence: 110
+Initial state: q0
+Read '1': q0 -> q1
+Read '1': q1 -> q2
+Read '0': q2 -> q0
+Final state: q0, Accepted: False
+Expected: False | Result: False
+
+
+Testing sequence: 110110
+Initial state: q0
+Read '1': q0 -> q1
+Read '1': q1 -> q2
+Read '0': q2 -> q0
+Read '1': q0 -> q1
+Read '1': q1 -> q2
+Read '0': q2 -> q0
+Final state: q0, Accepted: False
+Expected: False | Result: False
+
+
+Testing sequence: 1110
+Initial state: q0
+Read '1': q0 -> q1
+Read '1': q1 -> q2
+Read '1': q2 -> q1
+Read '0': q1 -> q3
+Final state: q3, Accepted: True
+Expected: True | Result: True

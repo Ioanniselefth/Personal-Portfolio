@@ -1,0 +1,33 @@
+PS C:\Users\ioanniel\Documents\Workspace\Personal> & c:/Users/ioanniel/Documents/Workspace/Personal/codeSnippetGenerator/venv/Scripts/python.exe c:/Users/ioanniel/Documents/Workspace/Personal/theoriaIpologismouProject/questionb.py
+Input: 0110
+Step: 0, State: q0, Head: 0, Tape: 0110
+Step: 1, State: q0, Head: 1, Tape: X110
+Step: 2, State: q0, Head: 2, Tape: XY10
+Step: 3, State: q0, Head: 3, Tape: XYY0
+Step: 4, State: q0, Head: 4, Tape: XYYX
+Step: 5, State: q1, Head: 3, Tape: XYYX_
+Step: 6, State: q1, Head: 2, Tape: XYYX_
+Step: 7, State: q1, Head: 1, Tape: XYYX_
+Step: 8, State: q1, Head: 0, Tape: XYYX_
+Step: 9, State: q1, Head: -1, Tape: XYYX_
+Step: 10, State: q2, Head: 0, Tape: XYYX_
+Step: 11, State: qf, Head: 0, Tape: XYYX_
+Final Tape: XYYX, Total Steps: 11
+
+
+Input: 1100
+Step: 0, State: q0, Head: 0, Tape: 1100
+Step: 1, State: q0, Head: 1, Tape: Y100
+Step: 2, State: q0, Head: 2, Tape: YY00
+Step: 3, State: q0, Head: 3, Tape: YYX0
+Step: 4, State: q0, Head: 4, Tape: YYXX
+Step: 5, State: q1, Head: 3, Tape: YYXX_
+Step: 6, State: q1, Head: 2, Tape: YYXX_
+Step: 7, State: q1, Head: 1, Tape: YYXX_
+Step: 8, State: q1, Head: 0, Tape: YYXX_
+Step: 9, State: q1, Head: -1, Tape: YYXX_
+Step: 10, State: q2, Head: 0, Tape: YYXX_
+Step: 11, State: q2, Head: 1, Tape: YYXX_
+Step: 12, State: q2, Head: 2, Tape: YYXX_
+Step: 13, State: qf, Head: 2, Tape: YYXX_
+Final Tape: YYXX, Total Steps: 13
